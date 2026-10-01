@@ -10,6 +10,7 @@
   <test name="Money movement">
     <classes>
       <class name="com.qa.parabank.tests.TransferTest"/>
+      <class name="com.qa.parabank.tests.BillPayTest"/>
     </classes>
   </test>
 </suite>
