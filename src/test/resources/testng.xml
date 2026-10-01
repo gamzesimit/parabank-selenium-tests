@@ -7,4 +7,9 @@
       <class name="com.qa.parabank.tests.LoginTest"/>
     </classes>
   </test>
+  <test name="Money movement">
+    <classes>
+      <class name="com.qa.parabank.tests.TransferTest"/>
+    </classes>
+  </test>
 </suite>
