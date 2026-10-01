@@ -24,9 +24,12 @@ jobs:
           cache: maven
       - name: Wait for ParaBank
         run: |
+          # the home page redirects, and the first visit to it initialises the
+          # database, so readiness is checked on the API once the page was opened
           for i in $(seq 1 40); do
-            code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 \
-              http://localhost:8081/parabank/index.htm || true)
+            curl -s -L -o /dev/null --max-time 20 http://localhost:8081/parabank/index.htm || true
+            code=$(curl -s -o /dev/null -w "%{http_code}" -H 'Accept: application/json' \
+              http://localhost:8081/parabank/services/bank/accounts/12345 || true)
             if [ "$code" = "200" ]; then echo "ready after $i attempts"; exit 0; fi
             sleep 10
           done
