@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ParaBank web" verbose="1">
+  <test name="Customers">
+    <classes>
+      <class name="com.qa.parabank.tests.RegistrationTest"/>
+      <class name="com.qa.parabank.tests.LoginTest"/>
+    </classes>
+  </test>
+</suite>
