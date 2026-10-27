@@ -75,3 +75,10 @@ reports and any failure screenshots for fourteen days.
 A transfer of 0.00 is reported complete and changes nothing. That reads as a
 product decision rather than a defect, so it is pinned by
 `aZeroTransferLeavesBothBalancesUnchanged` and raised here instead of filed.
+
+## Same application, two tools
+
+The same ParaBank build is also tested with Playwright and TypeScript in
+[parabank-test-automation](https://github.com/gamzesimit/parabank-test-automation).
+Two suites on one target is deliberate: the money rules are the same, so the
+difference between the two repositories is the tool and not the test design.
